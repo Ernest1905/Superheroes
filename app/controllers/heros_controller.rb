@@ -1,7 +1,7 @@
 class HerosController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
-  # GET /heros
+  
   def index
     heros= Heros.all
     render json: heros
@@ -13,13 +13,13 @@ class HerosController < ApplicationController
     render json: hero, status: :created
   end
 
-  # GET /birds/:id
+  
   def show
     hero= find_hero
     render json: hero
   end
 
-  # PATCH /birds/:id
+  
   def update
     hero = find_hero
     hero.update(hero_params)
@@ -30,8 +30,8 @@ class HerosController < ApplicationController
 
   
   def destroy
-    bird = find_hero
-    bird.destroy
+    hero = find_hero
+    hero.destroy
     head :no_content
   end
 
@@ -42,7 +42,7 @@ class HerosController < ApplicationController
   end
 
   def hero_params
-    params.permit(:name,   )
+    params.permit(:name,  :supername )
   end
 
   def render_not_found_response
