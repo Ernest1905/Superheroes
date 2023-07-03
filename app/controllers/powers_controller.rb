@@ -10,7 +10,7 @@ class PowersController < ApplicationController
   # POST /Powers
   def create
      power = find_power
-    render json: power, status: :created
+     render json: power, status: :created
   end
 
   
@@ -51,4 +51,4 @@ class PowersController < ApplicationController
     
 
 
-end
+
